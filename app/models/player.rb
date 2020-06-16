@@ -7,7 +7,7 @@ class Player < ActiveRecord::Base
     end
 
     def self.get_all_positions
-        Player.all.map{|position| player.position}.uniq
+        Player.all.map{|player| player.position}.uniq
     end
 
 end

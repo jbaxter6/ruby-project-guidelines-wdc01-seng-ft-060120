@@ -41,3 +41,35 @@ def add_team
         puts "New team created"
     end
 end
+
+def delete_team
+    puts "Please enter the name of the team you want to delete."
+    name_input = gets.chomp()
+    puts "Please enter the city of the team you want to delete."
+    city_input = gets.chomp()
+
+    team = Team.find_by(name: name_input, city: city_input)
+    if !team.nil?
+        Team.destroy(team.id)
+        puts "Team deleted"
+    else 
+        puts "This team does not exist!"
+    end
+end
+
+def get_players_on_team
+    puts "Please enter the name of the team you want to see the list of players."
+    name_input = gets.chomp()
+    puts "Please enter the city of the team you want to see if the list of players."
+    city_input = gets.chomp()
+
+    team = Team.find_by(name: name_input, city: city_input)
+
+    if !team.nil?
+        team.players.each do |player|
+            puts "#{player.name} -- #{player.position}"
+        end
+    else
+        puts "This team does not exist!"
+    end
+end

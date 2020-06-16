@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_210414) do
+ActiveRecord::Schema.define(version: 2020_06_16_204743) do
 
   create_table "player_teams", force: :cascade do |t|
     t.integer "team_id"
     t.integer "player_id"
-    t.integer "year"
     t.boolean "is_current_team"
   end
 

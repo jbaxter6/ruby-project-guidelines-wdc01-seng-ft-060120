@@ -78,10 +78,12 @@ class Team < ActiveRecord::Base
     def self.get_players_on_team
         team_id = self.prompt.select("Select from the following?", Team.all.map {|team| [team.name, team.id]}.to_h)
         team = Team.find(team_id)
+
+        player_teams = team.player_teams.select {|pt| pt.is_current_team == true}
         
         rows = []
-        team.players.each do |player|
-            rows << [player.name, player.position]
+        player_teams.each do |pt|
+            rows << [pt.player.name, pt.player.position]
         end
         table = Terminal::Table.new :headings => ['Player Name', 'Position'], :rows => rows
         puts table

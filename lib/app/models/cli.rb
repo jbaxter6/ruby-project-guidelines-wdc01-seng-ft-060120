@@ -1,9 +1,11 @@
 class CLI
 
     @@main_menu = ["Team functions", "Player functions", "Game functions", "Exit the program"]
-    @@team_menu = ["Get all teams", "Search team by name", "Search team by city", "Add team", "Delete team", "Get players on team"]
-    @@player_menu = ["Get all players", "Get players by position", "Get all positions"]
-    @@game_menu = ["Get all games"]
+    @@team_menu = ["Get all teams", "Search team by name", "Search team by city", "Add team", 
+        "Delete team", "Get players on team"]
+    @@player_menu = ["Get all players", "Get players by position", "Get all positions",
+        "Add new player", "Delete player", "Change players current team"]
+    # @@game_menu = ["Get all games"]
 
     def self.run
         prompt = TTY::Prompt.new
@@ -41,10 +43,16 @@ class CLI
                 Player.get_players_by_position
             when "Get all positions"
                 Player.get_all_positions
+            when "Add new player"
+                Player.add_new_player
+            when "Delete player"
+                Player.delete_player
+            when "Change players current team"
+                Player.change_players_current_team
             end
         
-        when "Game functions"
-            input = prompt.select("Select from the following?", @@game_menu)
+        # when "Game functions"
+        #     input = prompt.select("Select from the following?", @@game_menu)
         
         when "Exit the program"
             exit_program

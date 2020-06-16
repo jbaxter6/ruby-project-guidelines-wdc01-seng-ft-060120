@@ -56,6 +56,10 @@ when 1
         get_all_teams
     when 2 # Search team by name
         search_team_by_name
+    when 3 # Search team by city
+        search_team_by_city
+    when 4 # add team
+        puts add_team
     end
 
 when 2

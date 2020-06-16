@@ -15,3 +15,29 @@ def search_team_by_name
     puts "-Team Name------City-"
     puts "#{team.name} -- #{team.city}"
 end
+
+def search_team_by_city
+    puts "Please enter the city the team you want plays at"
+    #get input
+    input = gets.chomp()
+    team = Team.find_by_city(input)
+
+    puts "-Team Name------City-"
+    puts "#{team.name} -- #{team.city}"
+end
+
+def add_team
+    puts "Please enter your new teams name."
+    name_input = gets.chomp()
+    new_team = Team.find_or_create_by(name: name_input)
+
+    puts "Please enter your new teams city."
+    city_input = gets.chomp()
+    
+    new_team = Team.find_or_create_by(name: name_input, city: city_input) do |team| 
+        return "New team created!"
+    end
+
+    return "This team already exists."
+
+end

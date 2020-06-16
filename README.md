@@ -3,13 +3,29 @@
 
 ## What does this application do.
 
+Another functionality will be it will be able to track the different players and their teams in which they are associated within the league.
+
+
+
+## Game Functions
+
 This application will be able to track league games.  It will be able to determine what was the home team as well as the away team with a corresponding final score.
 
-Another functionality will be it will be able to track the different players and their teams in which they are associated within the league.
+
+## Team Functions
+
+You could also figure out where a team plays by city. (Ex: team_name.city)
+
+.find_by_city - takes in a city as a string for the parameter, and then finds the team associated with that city.
+
+.find_by_name - takes in a name as a string for the parameter, and will then find the team associated with that name.
+
+## Player Functions
 
 It will go in even more depth and track different attributes that come along with each player.  Such as (name, team, and position).
 
-If you would like to find out what players play a specific position in the league.  You will be able to view all players who play a particular position ( Ex output: Player.get_by_position(position) )
+If you would like to find out what players play a specific position in the league, you will be able to view all players who play a particular position. ( Ex: Player.get_by_position(position) )
+
 
 
 

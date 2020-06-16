@@ -26,6 +26,10 @@ It will go in even more depth and track different attributes that come along wit
 
 If you would like to find out what players play a specific position in the league, you will be able to view all players who play a particular position. ( Ex: Player.get_by_position(position) )
 
+.get_by_position - takes in a position as a string as a argument, and prints all players associated with that position.
+
+.get_all_positions - This prints all positions a player could play.
+
 
 
 

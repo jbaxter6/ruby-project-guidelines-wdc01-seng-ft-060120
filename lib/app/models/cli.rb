@@ -18,17 +18,17 @@ class CLI
         
             case input
             when "Get all teams"
-                get_all_teams
+                Team.get_all_teams
             when "Search team by name"
-                search_team_by_name
+                Team.search_team_by_name
             when "Search team by city"
-                search_team_by_city
+                Team.search_team_by_city
             when "Add team"
-                add_team
+                Team.add_team
             when "Delete team"
-                delete_team
+                Team.delete_team
             when "Get players on team"
-                get_players_on_team
+                Team.get_players_on_team
             end
         
         when "Player functions"
@@ -36,11 +36,11 @@ class CLI
         
             case input
             when "Get all players"
-                get_all_players
+                Player.get_all_players
             when "Get players by position"
-                get_players_by_position
+                Player.get_players_by_position
             when "Get all positions"
-                get_all_positions
+                Player.get_all_positions
             end
         
         when "Game functions"

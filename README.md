@@ -1,6 +1,34 @@
-# Module One Final Project Guidelines
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
+# League Team and Player Management Application
+
+## What does this application do.
+
+This application will be able to track league games.  It will be able to determine what was the home team as well as the away team with a corresponding final score.
+
+Another functionality will be it will be able to track the different players and their teams in which they are associated within the league.
+
+It will go in even more depth and track different attributes that come along with each player.  Such as (name, team, and position).
+
+If you would like to find out what players play a specific position in the league.  You will be able to view all players who play a particular position ( Ex output: Player.get_by_position(position) )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- # Module One Final Project Guidelines -->
+
+<!-- Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
 
 For your final project, we'll be building a Command Line database application.
 
@@ -56,4 +84,4 @@ Projects need to be approved prior to launching into them, so take some time to 
 ```ruby
 # in config/environment.rb add this line:
 ActiveRecord::Base.logger = nil
-```
+``` -->

@@ -1,17 +1,27 @@
 require 'pry'
 require_relative '../config/environment'
+require_relative 'team_functions.rb'
 
 def welcome
     puts "Please select from the menu below using only the list number."
 end
 
-def main_menu_functions
-    return ["Team functions", "Game functions", "Player functions", "Exit"]
+def get_menu_selections(type)
+    case type
+    when "Main"
+      return ["Team functions", "Player functions", "Game functions", "Exit the program"]
+    when "Team"
+      return ["Get all teams", "Search team by name", "Search team by city", "Add team", "Delete team"]
+    when "Player"
+      return ["Get all players"]
+    when "Game"
+      return ["Get all games"]
+    end
 end
-
-def print_main_menu(menu)
+  
+def print_menu(menu)
     menu.each_with_index do |value, index|
-        puts "#{index + 1}. #{value}"
+      puts "#{index + 1}. #{value}"
     end
 end
 
@@ -26,32 +36,36 @@ def get_user_input(menu)
     end
 end
 
-# def get_team_functions
-# end
-
-# def get_player_functions
-# end
-
-# def get_team_functions
-# end
-
-# def exit
-# end
-
+#Welcome to user
 welcome
 
-# while true
-#     menu = main_menu_functions
-#     print_main_menu(menu)
-#     case get_user_input(menu)
-#     when 1
-#         get_team_functions
-    
-#     when 2
-#         get_game_functions
+# Print out the main menu, and get their input
+menu = get_menu_selections("Main")
+print_menu(menu)
+input = get_user_input(menu)
 
-#     when 3
-#         get_player_functions
+# Determining which menu
+case input
+when 1
+    menu = get_menu_selections("Team")
+    print_menu(menu)
+    input = get_user_input(menu)
 
-#     end
-# end
+    case input
+    when 1 # Get all teams
+        get_all_teams
+    when 2 # Search team by name
+        search_team_by_name
+    end
+
+when 2
+    menu = get_menu_selections("Player")
+    print_menu(menu)
+    input = get_user_input(menu)
+
+when 3
+    menu = get_menu_selections("Game")
+    print_menu(menu)
+    input = get_user_input(menu)
+
+end

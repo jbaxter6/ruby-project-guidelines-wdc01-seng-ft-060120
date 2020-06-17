@@ -51,9 +51,6 @@ class CLI
                 Player.change_players_current_team
             end
         
-        # when "Game functions"
-        #     input = prompt.select("Select from the following?", @@game_menu)
-        
         when "Exit the program"
             exit_program
         end

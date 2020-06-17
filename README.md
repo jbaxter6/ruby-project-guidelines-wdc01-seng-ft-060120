@@ -3,39 +3,57 @@
 
 ## What does this application do.
 
-Another functionality will be it will be able to track the different players and their teams in which they are associated within the league.
+This program is intended for commissioners maintaining their corresponding league. The commissioner will be able to track the different players and their teams in which they are associated within the league.
 
 
+## Install Instructions
 
-## Game Functions
+https://github.com/jbaxter6/ruby-project-guidelines-wdc01-seng-ft-060120
 
-This application will be able to track league games.  It will be able to determine what was the home team as well as the away team with a corresponding final score.
+Fork and clone this repositiory to your computer.  Once this program is installed to your computer, before you start the program you must enter "bundle" to install all dependecies needed to use the program.  The next step you will have to enter "rake db:migrate" so can have access to your own personal database.  Once this is done you will be able to run the program.  You can do this by entering "ruby ./bin/run.rb".  After you have done all of this you will now have access to maintaining your league database.
 
+
+## Contributers Guide
+
+## License
+
+This project is covered under the Learn.co education content license
+
+https://github.com/jbaxter6/ruby-project-guidelines-wdc01-seng-ft-060120/blob/master/LICENSE.md 
+
+
+## Main Menu Functions
+
+  You have the choice to pick through three functions.  You can choose whether you would like to access the team functions, player functions, or if you would like to exit the program. D
+
+  1. Team Functions
+  2. Player Functions
+  3. Exit the Program
 
 ## Team Functions
 
-You could also figure out where a team plays by city. (Ex: team_name.city)
+The team functions brings you to a menu where you could access many different options that involves the teams within the league.
 
-.find_by_city - takes in a city as a string for the parameter, and then finds the team associated with that city.
-
-.find_by_name - takes in a name as a string for the parameter, and will then find the team associated with that name.
+1. Get all teams -  This function lists all teams that are in the league.
+2. Search team by name - You will be able to search up whether your team is affiliated with the league.
+3. Add team -  If you decide to add a new team to the league, there is an add team function to do that.
+4. Delete team -  If the you decide to get rid of a team in the league, you will be ble to use the delete team function.
+5. Get all players on a team -  This function lets you access the team for you to see what players are on the roster.
 
 ## Player Functions
 
-It will go in even more depth and track different attributes that come along with each player.  Such as (name, team, and position).
+Using our player functions you will be able to access different options about the players in the league.
 
-If you would like to find out what players play a specific position in the league, you will be able to view all players who play a particular position. ( Ex: Player.get_by_position(position) )
+1. Get all players -  This prints out all the players that are in the league.
+2. Get players by position -  This prints out a table of all players that play a particular position.
+3. Get all positions -  This lists all of the positions that players play in the league.
+4. Add new player - If a new player joins the league, you will be asked to input players name and the team they play for. Once this is done new player will be created.
+5. Delete player -  If a player leaves the league,  You can delete the player by choosing their name in the dropdown menu.
+6. Change players current team -  If a player were to get traded, you can change the players team by selecting your player and selecting the new team you would like them to play for.
 
-.get_by_position - takes in a position as a string as a argument, and prints all players associated with that position.
+## Exit the Program
 
-.get_all_positions - This prints all positions a player could play.
-
-
-
-
-
-
-
+If you would like to leave the once you start, you can click the exit the program option to do so.
 
 
 
@@ -46,62 +64,10 @@ If you would like to find out what players play a specific position in the leagu
 
 
 
-<!-- # Module One Final Project Guidelines -->
 
-<!-- Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
 
-For your final project, we'll be building a Command Line database application.
 
-## Project Requirements
 
-### Option One - Data Analytics Project
 
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have at minimum three models including one join model. This means you must have a many-to-many relationship.
-3. You should seed your database using data that you collect either from a CSV, a website by scraping, or an API.
-4. Your models should have methods that answer interesting questions about the data. For example, if you've collected info about movie reviews, what is the most popular movie? What movie has the most reviews?
-5. You should provide a CLI to display the return values of your interesting methods.  
-6. Use good OO design patterns. You should have separate classes for your models and CLI interface.
 
-  **Resource:** [Easy Access APIs](https://github.com/learn-co-curriculum/easy-access-apis)
 
-### Option Two - Command Line CRUD App
-
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have a minimum of three models.
-3. You should build out a CLI to give your user full CRUD ability for at least one of your resources. For example, build out a command line To-Do list. A user should be able to create a new to-do, see all todos, update a todo item, and delete a todo. Todos can be grouped into categories, so that a to-do has many categories and categories have many to-dos.
-4. Use good OO design patterns. You should have separate classes for your models and CLI interface.
-
-### Brainstorming and Proposing a Project Idea
-
-Projects need to be approved prior to launching into them, so take some time to brainstorm project options that will fulfill the requirements above.  You must have a minimum of four [user stories](https://en.wikipedia.org/wiki/User_story) to help explain how a user will interact with your app.  A user story should follow the general structure of `"As a <role>, I want <goal/desire> so that <benefit>"`. For example, if we were creating an app to randomly choose nearby restaurants on Yelp, we might write:
-
-* As a user, I want to be able to enter my name to retrieve my records
-* As a user, I want to enter a location and be given a random nearby restaurant suggestion
-* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
-* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
-
-## Instructions
-
-1. Fork and clone this repository.
-2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
-3. Make sure to create a good README.md with a short description, install instructions, a contributor's guide and a link to the license for your code.
-4. Make sure your project checks off each of the above requirements.
-5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
-    * The video should:
-      - Have an overview of your project. (2 minutes max)
-6. Prepare a presentation to follow your video. (3 minutes max)
-    * Your presentation should:
-      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      - Discuss 3 things you learned in the process of working on this project.
-      - Address, if anything, what you would change or add to what you have today?
-      - Present any code you would like to highlight.   
-7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
-
----
-### Common Questions:
-- How do I turn off my SQL logger?
-```ruby
-# in config/environment.rb add this line:
-ActiveRecord::Base.logger = nil
-``` -->

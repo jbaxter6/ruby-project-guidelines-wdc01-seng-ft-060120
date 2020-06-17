@@ -17,7 +17,7 @@ class CLI
         case input
         when "Team functions"
             message = Artii::Base.new :font => 'slant'
-            puts message.asciify('Team Functions')
+            puts message.asciify('Team Functions').colorize(:yellow)
             input = prompt.select("Select from the following?", @@team_menu)
         
             case input
@@ -45,7 +45,7 @@ class CLI
         
         when "Player functions"
             message = Artii::Base.new :font => 'slant'
-            puts message.asciify('Player Functions')
+            puts message.asciify('Player Functions').colorize(:magenta)
             input = prompt.select("Select from the following?", @@player_menu)
         
             case input
@@ -78,12 +78,12 @@ class CLI
 
     def self.welcome
         message = Artii::Base.new :font => 'slant'
-        puts message.asciify('Main Menu')
+        puts message.asciify('Main Menu').colorize(:blue)
     end
 
     def self.exit_program
         message = Artii::Base.new :font => 'slant'
-        puts message.asciify('Goodbye!')
+        puts message.asciify('Goodbye!').colorize(:red)
     end
 
 end

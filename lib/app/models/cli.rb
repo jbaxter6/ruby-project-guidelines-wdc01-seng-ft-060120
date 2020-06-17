@@ -1,6 +1,6 @@
 class CLI
 
-    @@main_menu = ["Team functions", "Player functions", "Game functions", "Exit the program"]
+    @@main_menu = ["Team functions", "Player functions", "Exit the program"]
     @@team_menu = ["Get all teams", "Search team by name", "Search team by city", "Add team", 
         "Delete team", "Get players on team", "Main menu"]
     @@player_menu = ["Get all players", "Get players by position", "Get all positions",
@@ -16,6 +16,8 @@ class CLI
         
         case input
         when "Team functions"
+            message = Artii::Base.new :font => 'slant'
+            puts message.asciify('Team Functions')
             input = prompt.select("Select from the following?", @@team_menu)
         
             case input
@@ -42,6 +44,8 @@ class CLI
             end
         
         when "Player functions"
+            message = Artii::Base.new :font => 'slant'
+            puts message.asciify('Player Functions')
             input = prompt.select("Select from the following?", @@player_menu)
         
             case input
@@ -73,11 +77,13 @@ class CLI
     end
 
     def self.welcome
-        puts "Welcome to the application!"
+        message = Artii::Base.new :font => 'slant'
+        puts message.asciify('Main Menu')
     end
 
     def self.exit_program
-        puts "Thank you for using this application!"
+        message = Artii::Base.new :font => 'slant'
+        puts message.asciify('Goodbye!')
     end
 
 end
